@@ -8,7 +8,7 @@ test = pd.read_table('ratings_test.txt')
 sa = Pororo(task="sentiment", model="brainbert.base.ko.nsmc", lang="ko")
 zsl = Pororo(task="zero-topic", lang="ko")
 
-def get_accuracy(sent,mode):
+def get_accuracy_binary(sent,mode): # Positive/Negative
     X = sent.document.values
     y = sent.label.values
     y_pred = []
@@ -31,8 +31,8 @@ def get_accuracy(sent,mode):
   
 if __name__ == '__main__':
   test_size = 1000
-  y,zsl_pred = get_accuracy(test[:test_size],'zsl')
-  y,sa_pred = get_accuracy(test[:test_size],'sa')
+  y,zsl_pred = get_accuracy_binary(test[:test_size],'zsl')
+  y,sa_pred = get_accuracy_binary(test[:test_size],'sa')
 
   print(f'Zero Shot Topic Classification Accuracy {np.equal(y,zsl_pred).sum()/test_size*100}')
   print(f'Sentiment Analysis Accuracy {np.equal(y,sa_pred).sum()/test_size*100}')
