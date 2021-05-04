@@ -11,4 +11,5 @@ Just to be fair, I employed the most similar classifying model possible for each
 For the first benchmark(NSMC) I import both classifiers from the Pororo library [https://github.com/kakaobrain/pororo] from Kakao brain.    
 
 ## Project Result.   
-1. In a binary classification task it seems the traditional method slightly out runs the zero-shot method.
+1. In a binary classification task it seems the traditional method slightly out runs the zero-shot method.   
+![](https://raw.githubusercontent.com/ampehta/Sentiment-Analysis-Assessment/main/results.png)
