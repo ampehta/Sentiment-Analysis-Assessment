@@ -1,3 +1,4 @@
+import operator
 import pandas as pd
 import urllib.request
 from pororo import Pororo
